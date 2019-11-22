@@ -7,7 +7,7 @@ namespace UsfmConverterConsole
         [Option('i', "input", Required = true, HelpText = "Set the directory that contains usfm files.")]
         public string ProjectInput { get; set; }
 
-        [Option('o', "output", Required = false, HelpText = "Set the output directory.")]
+        [Option('o', "output", Required = true, HelpText = "Set the output directory.")]
         public string ProjectOutput { get; set; }
 
         [Option('j', "justified", Required = false, HelpText = "Justified text")]

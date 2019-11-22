@@ -66,7 +66,13 @@ namespace UsfmConverterConsole
 
             if (!dirinfo.Exists)
             {
-                Console.WriteLine("The path doesn't exist. Make sure you spelled it correctly");
+                Console.WriteLine("The input path doesn't exist. Make sure you spelled it correctly");
+                return;
+            }
+
+            if(!Directory.Exists(projectOutput))
+            {
+                Console.WriteLine("The output path doesn't exist. Make sure you spelled it correctly");
                 return;
             }
 
@@ -87,7 +93,7 @@ namespace UsfmConverterConsole
             }
 
             var html = renderer.Render(usfm);
-            var htmlFilename = projectOutput;
+            var htmlFilename = Path.Combine(projectOutput, "out.html");
 
             File.WriteAllText(htmlFilename, html);
 
@@ -110,11 +116,7 @@ namespace UsfmConverterConsole
 
                        if (o.ProjectOutput != null && !o.ProjectOutput.Equals(String.Empty))
                        {
-                           projectOutput = Path.Combine(o.ProjectOutput, "out.html");
-                       }
-                       else
-                       {
-                           projectOutput = "out.html";
+                           projectOutput = o.ProjectOutput;
                        }
 
                        isTextJustified = o.IsJustified;
