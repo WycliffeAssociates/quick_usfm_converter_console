@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsfmConverterConsole", "UsfmConverterConsole\UsfmConverterConsole.csproj", "{0AE87BAD-9B7F-4BE0-A0DE-756D8FE983EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AE87BAD-9B7F-4BE0-A0DE-756D8FE983EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE87BAD-9B7F-4BE0-A0DE-756D8FE983EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE87BAD-9B7F-4BE0-A0DE-756D8FE983EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE87BAD-9B7F-4BE0-A0DE-756D8FE983EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F065163-FA37-4BBF-BB85-9C9D387A3619}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <ApplicationIcon>converter_logo_inverted_icon.ico</ApplicationIcon>
+    <AssemblyName>UsfmConverterConsole</AssemblyName>
+    <RootNamespace>UsfmConverterConsole</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.6.0" />
+    <PackageReference Include="USFMToolsSharp" Version="1.2.0" />
+    <PackageReference Include="USFMToolsSharp.Renderers.HTML" Version="0.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="insert_ULB_License.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
