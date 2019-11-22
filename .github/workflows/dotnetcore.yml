@@ -1,9 +1,9 @@
 name: .NET Core
 
 on: 
-  pull_request:
-    branches:
-      - master
+  push:
+    tags:
+      - 'v*.*.*'
 
 jobs:
   build:
@@ -34,7 +34,6 @@ jobs:
         path: ./UsfmConverterConsole/bin/Release/netcoreapp3.0/win-x64/publish/
     - name: Publish release
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
           ./win64.zip
