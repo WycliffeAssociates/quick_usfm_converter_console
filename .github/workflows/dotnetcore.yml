@@ -13,7 +13,11 @@ jobs:
       uses: actions/setup-dotnet@v1.2.0
       with:
         dotnet-version: 3.0.100
-    - name: Build with dotnet
-      run: dotnet build --configuration Release --self-contained
-    - name: Package everything up with dotnet
-      run: dotnet publish --configuration Release --self-contained
+    - name: Build with dotnet for windows 64
+      run: dotnet build --configuration Release -r win-x64 --self-contained
+    - name: Build with dotnet for linux 64
+      run: dotnet build --configuration Release -r linux-x64 --self-contained
+    - name: Package everything up with dotnet for windows 64
+      run: dotnet publish --configuration Release -r win-x64 --self-contained
+    - name: Package everything up with dotnet for linux 64
+      run: dotnet publish --configuration Release -r linux-x64 --self-contained
