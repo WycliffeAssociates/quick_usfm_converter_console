@@ -16,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="converter_logo_inverted_icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="insert_ULB_License.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
