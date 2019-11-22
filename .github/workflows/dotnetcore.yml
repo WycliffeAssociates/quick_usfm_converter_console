@@ -23,11 +23,11 @@ jobs:
       run: dotnet publish --configuration Release -r linux-x64
     - uses: actions/upload-artifact@v1
       with:
-        name: linux64.zip
+        name: linux64
         path: ./UsfmConverterConsole/bin/Release/netcoreapp3.0/linux-x64/publish/
     - uses: actions/upload-artifact@v1
       with:
-        name: win64.zip
+        name: win64
         path: ./UsfmConverterConsole/bin/Release/netcoreapp3.0/win-x64/publish/
     - name: Publish release
       uses: softprops/action-gh-release@v1
