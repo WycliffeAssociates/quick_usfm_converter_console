@@ -28,11 +28,3 @@ jobs:
     - uses: montudor/action-zip@v0.1.0
       with:
         args: zip -qq -r ./linux64.zip ./UsfmConverterConsole/bin/Release/netcoreapp3.0/linux-x64/publish/
-    - name: Publish release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          ./win64.zip
-          ./linux64.zip
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
