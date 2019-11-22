@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using USFMToolsSharp;
 using USFMToolsSharp.Models.Markers;
 using USFMToolsSharp.Renderers.HTML;
@@ -76,20 +77,21 @@ namespace UsfmConverterConsole
                 return;
             }
 
-            var allFiles = dirinfo.GetFiles("*", SearchOption.AllDirectories);
+            var allFiles = dirinfo.GetFiles("*.usfm", SearchOption.AllDirectories)
+                .Union(dirinfo.GetFiles("*.txt", SearchOption.AllDirectories)).ToArray();
+            Array.Sort(allFiles, delegate (FileInfo a, FileInfo b)
+            {
+                return a.FullName.CompareTo(b.FullName);
+            });
             var progress = allFiles.Length;
             var progressStep = 0;
 
             foreach (FileInfo fileInfo in allFiles)
             {
-                if (fileInfo.FullName.ToLower().EndsWith(".usfm") ||
-                    fileInfo.FullName.ToLower().EndsWith(".txt"))
-                {
-                    var text = File.ReadAllText(fileInfo.FullName);
-                    usfm.Insert(parser.ParseFromString(text));
-                    progressStep++;
-                    Console.Write("\r[{0}%] ", (int)(progressStep / (float)progress * 100));
-                }
+                var text = File.ReadAllText(fileInfo.FullName);
+                usfm.Insert(parser.ParseFromString(text));
+                progressStep++;
+                Console.Write("\r[{0}%] ", (int)(progressStep / (float)progress * 100));
             }
 
             var html = renderer.Render(usfm);
