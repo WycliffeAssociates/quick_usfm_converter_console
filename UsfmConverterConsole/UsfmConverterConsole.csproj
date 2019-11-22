@@ -6,6 +6,7 @@
     <ApplicationIcon>converter_logo_inverted_icon.ico</ApplicationIcon>
     <AssemblyName>UsfmConverterConsole</AssemblyName>
     <RootNamespace>UsfmConverterConsole</RootNamespace>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
