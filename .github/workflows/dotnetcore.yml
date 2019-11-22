@@ -21,3 +21,9 @@ jobs:
       run: dotnet publish --configuration Release -r win-x64
     - name: Package everything up with dotnet for linux 64
       run: dotnet publish --configuration Release -r linux-x64
+    - uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip -qq -r ./win64.zip ./UsfmConverterConsole\bin\Release\netcoreapp3.0\win-x64\publish\
+    - uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip -qq -r ./linuxn64.zip ./UsfmConverterConsole\bin\Release\netcoreapp3.0\linux-x64\publish\
