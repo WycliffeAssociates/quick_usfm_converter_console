@@ -1,9 +1,6 @@
 name: .NET Core
 
-on: 
-  push:
-    tags:
-      - 'v*.*.*'
+on: push
 
 jobs:
   build:
@@ -36,7 +33,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          ./win64.zip
-          ./linux64.zip
+          ./UsfmConverterConsole/bin/Release/netcoreapp3.0/linux-x64/publish/
+          ./UsfmConverterConsole/bin/Release/netcoreapp3.0/win-x64/publish/
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
