@@ -32,11 +32,15 @@ jobs:
       with:
         name: win64
         path: ./UsfmConverterConsole/bin/Release/netcoreapp3.0/win-x64/publish/
+    - name: Zip built files
+      run: |
+          zip -r --junk-paths linux64 ./UsfmConverterConsole/bin/Release/netcoreapp3.0/linux-x64/publish/
+          zip -r --junk-paths win64 ./UsfmConverterConsole/bin/Release/netcoreapp3.0/win-x64/publish/
     - name: Publish release
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          ./UsfmConverterConsole/bin/Release/netcoreapp3.0/linux-x64/publish/
-          ./UsfmConverterConsole/bin/Release/netcoreapp3.0/win-x64/publish/
+          ./linux64.zip
+          ./win64.zip
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
