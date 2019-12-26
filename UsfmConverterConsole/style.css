@@ -95,6 +95,11 @@ div.two-column {
     page: Column2;
 }
 
+table.blank_col td {
+    width: 50%;
+    vertical-align: top;
+}
+
 p.MsoFooter, li.MsoFooter, div.MsoFooter {
     margin: 0in;
     margin-bottom: .0001pt;
@@ -109,8 +114,8 @@ div.FooterSection {
 
 table#hrdftrtbl {
     margin: 0 auto;
-	text-align: center;
-    width: 900px;
+    text-align: center;
+    width: 600px;
     height: 1px;
     tab-stops: center 3.0in right 6.0in;
     overflow: hidden;
