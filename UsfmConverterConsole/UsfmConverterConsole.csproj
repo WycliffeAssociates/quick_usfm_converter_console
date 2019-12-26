@@ -6,13 +6,13 @@
     <ApplicationIcon>converter_logo_inverted_icon.ico</ApplicationIcon>
     <AssemblyName>UsfmConverterConsole</AssemblyName>
     <RootNamespace>UsfmConverterConsole</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.6.0" />
     <PackageReference Include="USFMToolsSharp" Version="1.2.0" />
-    <PackageReference Include="USFMToolsSharp.Renderers.HTML" Version="0.2.0" />
+    <PackageReference Include="USFMToolsSharp.Renderers.HTML" Version="0.2.1" />
   </ItemGroup>
 
   <ItemGroup>

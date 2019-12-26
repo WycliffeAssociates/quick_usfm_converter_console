@@ -17,6 +17,7 @@ namespace UsfmConverterConsole
         private bool isTextJustified = false;
         private bool isSingleSpaced = true;
         private bool hasOneColumn = true;
+        private bool hasBlankColumn = false;
         private bool isL2RDirection = true;
         private bool willSeparateChap = true;
         private bool willSeparateVerse = false;
@@ -124,6 +125,7 @@ namespace UsfmConverterConsole
                        isTextJustified = o.IsJustified;
                        isSingleSpaced = !o.IsDoubleSpaced;
                        hasOneColumn = !o.HasTwoColumns;
+                       hasBlankColumn = o.HasBlankColumn && hasOneColumn;
                        isL2RDirection = !o.IsR2LDirection;
                        willSeparateChap = !o.WillCombineChapter;
                        willSeparateVerse = o.WillSeparateVerse;
@@ -209,6 +211,8 @@ namespace UsfmConverterConsole
             config.separateVerses = willSeparateVerse;
 
             config.separateChapters = willSeparateChap;
+
+            config.blankColumn = hasBlankColumn;
 
             return config;
         }
